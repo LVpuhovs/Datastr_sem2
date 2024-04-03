@@ -104,7 +104,7 @@ public class MyLinkedList<Ttype> {
 		else {
 			MyListNode temp = first;
 			for(int i = 0; i < position;i++) {
-				first = first.getNext();
+				temp = temp.getNext();
 			}
 			MyListNode rightNode = temp;
 			MyListNode leftNode = temp;
@@ -116,10 +116,47 @@ public class MyLinkedList<Ttype> {
 			leftNode.setNext(newNode);
 			
 			counter++;
+		}	
+	}
+	//delete
+		//TODO
+		//funkcijas  deklaresana	
+	public void delete(int position) throws Exception {
+		//parbaude uz isEmpty
+		if(isEmpty()) throw new Exception("List is empty");
+		//parbaude uz position
+		if(position < 0 || position >= counter) throw new Exception("Problems with position");
+		
+		//1. ja dzesam pirmo elementu
+		
+		if(position == 0) {
+			MyListNode newFirst = first.getNext();
+			newFirst.setPrevious(null);
+			first = newFirst;
+			counter--;
+			System.gc();
+		}
+		//2. ja dzesam pedejo elementu
+		else if(position == counter) {
+			MyListNode newlast = last.getPrevious();
+			newlast.setNext(null);
+			last = newlast;
+			counter--;
+			System.gc();
+		}
+		//3. ja dzesam kadu pa vidu
+		else {
+			MyListNode temp = first;
+			for(int i = 0; i < position;i++) {
+				temp = temp.getNext();
+			}
+			MyListNode rightNode = temp.getPrevious();
+			MyListNode leftNode = temp.getNext();
+			
+			counter--;
+			System.gc();
 		}
 	}
-	
-	
 	
 	
 
