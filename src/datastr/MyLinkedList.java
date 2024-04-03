@@ -148,13 +148,17 @@ public class MyLinkedList<Ttype> {
 		//3. ja dzesam kadu pa vidu
 		else {
 			MyListNode temp = first;
-			for(int i = 0; i < position;i++) {
+			
+			for(int i = 0; i < position; i++) {
 				temp = temp.getNext();
 			}
+			
+			
 			MyListNode rightNode = temp.getNext();
 			MyListNode leftNode = temp.getPrevious();
-			leftNode = first;
-			rightNode = last;
+			
+			leftNode.setNext(rightNode);
+			rightNode.setPrevious(leftNode);
 			
 			counter--;
 			System.gc();
