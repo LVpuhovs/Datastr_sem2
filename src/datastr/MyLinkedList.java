@@ -103,11 +103,12 @@ public class MyLinkedList<Ttype> {
 		
 		else {
 			MyListNode temp = first;
-			for(int i = 0; i < position;i++) {
+			for(int i = 0 ; i < position ; i++) {
 				temp = temp.getNext();
 			}
+			
 			MyListNode rightNode = temp;
-			MyListNode leftNode = temp;
+			MyListNode leftNode = temp.getPrevious();
 			MyListNode newNode = new MyListNode(element);
 			
 			newNode.setNext(rightNode);
@@ -150,8 +151,10 @@ public class MyLinkedList<Ttype> {
 			for(int i = 0; i < position;i++) {
 				temp = temp.getNext();
 			}
-			MyListNode rightNode = temp.getPrevious();
-			MyListNode leftNode = temp.getNext();
+			MyListNode rightNode = temp.getNext();
+			MyListNode leftNode = temp.getPrevious();
+			leftNode = first;
+			rightNode = last;
 			
 			counter--;
 			System.gc();

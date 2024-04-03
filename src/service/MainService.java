@@ -11,6 +11,10 @@ public class MainService {
 			myList.add(100);
 			myList.add(-5);
 			myList.print();
+			myList.add(-1000, 1);
+			myList.print();
+			myList.delete(2);
+			myList.print();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
