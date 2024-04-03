@@ -1,40 +1,42 @@
 package datastr;
 
 public class MyListNode<Ttype> {
-	//TODO
-	// variables 
+//TODO
+	//1. variables - element, next un previous
 	private Ttype element;
-	private MyListNode<Ttype> next = null;
-	private MyListNode<Ttype> previous = null;
-	
-	//get and set
+	private MyListNode next = null;
+	private MyListNode previous = null;
+	//2. get and set
 	public Ttype getElement() {
 		return element;
 	}
 	public void setElement(Ttype element) {
-		if (element != null)
+		if(element != null)
 			this.element = element;
 		else
-			this.element = (Ttype)new Object();
+			this.element = (Ttype) new Object();
 	}
-	public MyListNode<Ttype> getNext() {
+	public MyListNode getNext() {
 		return next;
 	}
-	public void setNext(MyListNode<Ttype> next) {
+	public void setNext(MyListNode next) {
 		this.next = next;
 	}
-	public MyListNode<Ttype> getPrevious() {
+	public MyListNode getPrevious() {
 		return previous;
 	}
-	public void setPrevious(MyListNode<Ttype> previous) {
+	public void setPrevious(MyListNode previous) {
 		this.previous = previous;
 	}
-	//constructors
-	public MyListNode(Ttype element) {
+
+	//3. constructors
+	public MyListNode (Ttype element) {
 		setElement(element);
 	}
-	//tostring
+	
+	//4. toString
 	public String toString() {
-		return " " + element;
+		return ""+element;
 	}
+	
 }
