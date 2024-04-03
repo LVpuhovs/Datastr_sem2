@@ -165,6 +165,20 @@ public class MyLinkedList<Ttype> {
 		}
 	}
 	
+	//get (pec pozicijas)
+	public Ttype get(int position) throws Exception {
+		if(position < 0 || position > counter) throw new Exception("Problems with position");
+		if (isEmpty()) throw  new Exception("List Empty");
+		
+		MyListNode temp = first;
+		
+		for(int i = 0; i < position; i++) {
+			temp = temp.getNext();
+		}
+		
+		return (Ttype) temp.getElement();	
+	}
 	
-
+	//search
+	//makeEmpty
 }

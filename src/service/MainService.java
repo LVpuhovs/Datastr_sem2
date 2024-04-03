@@ -15,6 +15,7 @@ public class MainService {
 			myList.print();
 			myList.delete(2);
 			myList.print();
+			System.out.println(myList.get(2));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
