@@ -180,5 +180,28 @@ public class MyLinkedList<Ttype> {
 	}
 	
 	//search
+	public boolean search(Ttype element) throws Exception {
+		if (isEmpty()) throw  new Exception("List Empty");
+		if(element == null) throw new Exception("Problems with element");
+		
+		MyListNode temp = first;
+		
+		for(int i = 0; i < counter; i++) {
+			if(temp.getElement().equals(element)) {
+				return true;
+			}
+			temp = temp.getNext();
+		}
+		
+		return false;
+
+	}
 	//makeEmpty
+	
+	public void makeEmpty() {
+		last = null;
+		first = null;
+		counter = 0;
+		System.gc();
+	}
 }
